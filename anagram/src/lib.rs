@@ -4,7 +4,7 @@ pub fn anagrams_for<'a>(word: &str, possible_anagrams: &[&'a str]) -> HashSet<&'
     possible_anagrams
         .iter()
         .filter_map(|a| anagrams(a, word))
-        .collect()
+        .collect::<HashSet<_>>()
 }
 
 fn get_sorted_word(word: &str) -> Vec<char> {
