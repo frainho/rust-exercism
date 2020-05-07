@@ -29,10 +29,5 @@ fn is_sublist_of<T: PartialEq>(list_a: &[T], list_b: &[T]) -> bool {
         return true;
     }
 
-    for subset in list_b.windows(list_a.len()) {
-        if subset == list_a {
-            return true;
-        }
-    }
-    false
+    list_b.windows(list_a.len()).any(|subset| subset == list_a)
 }
