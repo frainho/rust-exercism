@@ -21,10 +21,10 @@ impl<'a> HighScores<'a> {
     }
 
     pub fn personal_top_three(&self) -> Vec<u32> {
-        let mut result = self.scores.to_owned();
-        result.sort();
-        result.reverse();
-        result.drain(3..);
-            result
+        let mut results = self.scores.to_vec();
+        results.sort();
+        results.reverse();
+        results.truncate(3);
+        results
     }
 }
