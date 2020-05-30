@@ -2,7 +2,6 @@ pub fn abbreviate(phrase: &str) -> String {
     phrase
         .split(|c: char| !c.is_alphabetic() && c != '\'')
         .flat_map(|word| {
-            println!("word {}", word);
             if word.len() <= 4 {
                 return word
                     .chars()
